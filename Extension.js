@@ -61,7 +61,7 @@
         color1: '#DA291C',
         color2: '#FFD700',
         blocks: [
-          // HAT BLOCKS - super easy events
+          // HAT BLOCKS
           { opcode: 'whenCR7Scores', blockType: Scratch.BlockType.HAT, text: 'when CR7 scores a goal' },
           { opcode: 'whenMatchEnds', blockType: Scratch.BlockType.HAT, text: 'when match ends' },
           { opcode: 'whenStaminaRunsOut', blockType: Scratch.BlockType.HAT, text: 'when CR7 stamina runs out' },
@@ -95,7 +95,7 @@
           { opcode: 'whenHotStreakStarts', blockType: Scratch.BlockType.HAT, text: 'when CR7 hot streak starts' },
           { opcode: 'whenStreakOf10Reached', blockType: Scratch.BlockType.HAT, text: 'when CR7 gets 10 goal streak' },
           '---',
-          // COMMAND BLOCKS - super easy actions
+          // COMMAND BLOCKS
           { opcode: 'resetStamina', blockType: Scratch.BlockType.COMMAND, text: 'reset CR7 stamina to full' },
           { opcode: 'triggerCelebration', blockType: Scratch.BlockType.COMMAND, text: 'trigger CR7 Siuuu celebration' },
           { opcode: 'trainSkill', blockType: Scratch.BlockType.COMMAND, text: 'train CR7 skill + [XP] XP', arguments: { XP: {type: Scratch.ArgumentType.NUMBER, defaultValue: 100} }},
@@ -125,12 +125,13 @@
           { opcode: 'cr7SetScore', blockType: Scratch.BlockType.COMMAND, text: 'CR7 set score to [SCORE]', arguments: { SCORE: {type: Scratch.ArgumentType.NUMBER, defaultValue: 5} }},
           { opcode: 'cr7PlayGoalSound', blockType: Scratch.BlockType.COMMAND, text: 'CR7 play goal sound' },
           { opcode: 'createRonaldoCard', blockType: Scratch.BlockType.COMMAND, text: 'create Ronaldo card named [NAME] goal power [POWER] speed [SPEED] header [HEADER]', arguments: { NAME: {type: Scratch.ArgumentType.STRING, defaultValue: 'CR7 Legend'}, POWER: {type: Scratch.ArgumentType.NUMBER, defaultValue: 95}, SPEED: {type: Scratch.ArgumentType.NUMBER, defaultValue: 90}, HEADER: {type: Scratch.ArgumentType.NUMBER, defaultValue: 85} }},
-          { opcode: 'playRonaldoCard', blockType: Scratch.BlockType.COMMAND, text: 'play Ronaldo card [CARD]' },
-          { opcode: 'startCardBattle', blockType: Scratch.BlockType.COMMAND, text: 'start card battle with opponent card [OPPONENT]' },
-          { opcode: 'attackWithCard', blockType: Scratch.BlockType.COMMAND, text: 'attack with Ronaldo card [CARD]' },
-          { opcode: 'defendWithCard', blockType: Scratch.BlockType.COMMAND, text: 'defend with Ronaldo card [CARD]' },
+          // FIXED: added missing arguments
+          { opcode: 'playRonaldoCard', blockType: Scratch.BlockType.COMMAND, text: 'play Ronaldo card [CARD]', arguments: { CARD: {type: Scratch.ArgumentType.STRING, defaultValue: 'CR7 Legend'} }},
+          { opcode: 'startCardBattle', blockType: Scratch.BlockType.COMMAND, text: 'start card battle with opponent card [OPPONENT]', arguments: { OPPONENT: {type: Scratch.ArgumentType.STRING, defaultValue: 'Messi'} }},
+          { opcode: 'attackWithCard', blockType: Scratch.BlockType.COMMAND, text: 'attack with Ronaldo card [CARD]', arguments: { CARD: {type: Scratch.ArgumentType.STRING, defaultValue: 'CR7 Legend'} }},
+          { opcode: 'defendWithCard', blockType: Scratch.BlockType.COMMAND, text: 'defend with Ronaldo card [CARD]', arguments: { CARD: {type: Scratch.ArgumentType.STRING, defaultValue: 'CR7 Legend'} }},
           { opcode: 'startTournament', blockType: Scratch.BlockType.COMMAND, text: 'start tournament with [NUMBER] players', arguments: { NUMBER: {type: Scratch.ArgumentType.NUMBER, defaultValue: 8} }},
-          { opcode: 'addCardToBracket', blockType: Scratch.BlockType.COMMAND, text: 'add Ronaldo card [CARD] to bracket' },
+          { opcode: 'addCardToBracket', blockType: Scratch.BlockType.COMMAND, text: 'add Ronaldo card [CARD] to bracket', arguments: { CARD: {type: Scratch.ArgumentType.STRING, defaultValue: 'CR7 Legend'} }},
           { opcode: 'simulateNextRound', blockType: Scratch.BlockType.COMMAND, text: 'simulate next tournament round' },
           { opcode: 'startGroupStage', blockType: Scratch.BlockType.COMMAND, text: 'start group stage' },
           { opcode: 'addCardToGroup', blockType: Scratch.BlockType.COMMAND, text: 'add Ronaldo card [CARD] to group [GROUP]', arguments: { CARD: {type: Scratch.ArgumentType.STRING, defaultValue: 'CR7 Legend'}, GROUP: {type: Scratch.ArgumentType.NUMBER, defaultValue: 1} }},
@@ -142,7 +143,7 @@
           { opcode: 'cr7DoubleTheNumber', blockType: Scratch.BlockType.COMMAND, text: 'CR7 double the number [NUMBER]', arguments: { NUMBER: {type: Scratch.ArgumentType.NUMBER, defaultValue: 10} }},
           { opcode: 'cr7HalveTheNumber', blockType: Scratch.BlockType.COMMAND, text: 'CR7 halve the number [NUMBER]', arguments: { NUMBER: {type: Scratch.ArgumentType.NUMBER, defaultValue: 100} }},
           '---',
-          // BOOLEAN BLOCKS - super easy yes/no
+          // BOOLEAN BLOCKS
           { opcode: 'isStaminaLow', blockType: Scratch.BlockType.BOOLEAN, text: 'is CR7 stamina low?' },
           { opcode: 'hasHatTrick', blockType: Scratch.BlockType.BOOLEAN, text: 'has CR7 scored hat-trick?' },
           { opcode: 'isLegendaryForm', blockType: Scratch.BlockType.BOOLEAN, text: 'is CR7 in legendary form?' },
@@ -162,14 +163,15 @@
           { opcode: 'isCR7Moving', blockType: Scratch.BlockType.BOOLEAN, text: 'is CR7 moving?' },
           { opcode: 'isScoreHigh', blockType: Scratch.BlockType.BOOLEAN, text: 'is score high?' },
           { opcode: 'isTimeUp', blockType: Scratch.BlockType.BOOLEAN, text: 'is time up?' },
-          { opcode: 'isRonaldoCardLegendary', blockType: Scratch.BlockType.BOOLEAN, text: 'is Ronaldo card [CARD] legendary?' },
+          // FIXED: added missing CARD argument
+          { opcode: 'isRonaldoCardLegendary', blockType: Scratch.BlockType.BOOLEAN, text: 'is Ronaldo card [CARD] legendary?', arguments: { CARD: {type: Scratch.ArgumentType.STRING, defaultValue: 'CR7 Legend'} }},
           { opcode: 'isCardBattleWon', blockType: Scratch.BlockType.BOOLEAN, text: 'is card battle won?' },
           { opcode: 'isTournamentFinished', blockType: Scratch.BlockType.BOOLEAN, text: 'is tournament finished?' },
           { opcode: 'isGroupStageFinished', blockType: Scratch.BlockType.BOOLEAN, text: 'is group stage finished?' },
           { opcode: 'isOnHotStreak', blockType: Scratch.BlockType.BOOLEAN, text: 'is CR7 on hot streak?' },
           { opcode: 'isStreakActive', blockType: Scratch.BlockType.BOOLEAN, text: 'is CR7 streak active?' },
           '---',
-          // REPORTER BLOCKS - super easy values
+          // REPORTER BLOCKS
           { opcode: 'aiRonaldoReply', blockType: Scratch.BlockType.REPORTER, text: '🤖 AI CR7 replies to [MESSAGE]', arguments: { MESSAGE: {type: Scratch.ArgumentType.STRING, defaultValue: 'How do I become great?'} }},
           { opcode: 'cr7PlayerSpeed', blockType: Scratch.BlockType.REPORTER, text: 'CR7 Player Speed [BASE]', arguments: { BASE: {type: Scratch.ArgumentType.NUMBER, defaultValue: 8} }},
           { opcode: 'cr7ShotPower', blockType: Scratch.BlockType.REPORTER, text: 'CR7 Shot Power [BASE]', arguments: { BASE: {type: Scratch.ArgumentType.NUMBER, defaultValue: 50} }},
@@ -292,7 +294,7 @@
     defendWithCard(args) { if (Math.random() > 0.5) { this._battleWinner = 'CR7'; } else { this._battleWinner = 'Opponent'; } }
     startTournament(args) { this._tournamentActive = true; this._tournamentRound = 1; this._tournamentCards = []; this._tournamentWinner = ''; this._prizeMoney = 0; }
     addCardToBracket(args) { this._tournamentCards.push(Scratch.Cast.toString(args.CARD)); }
-    simulateNextRound() { 
+    simulateNextRound() {
       if (this._tournamentCards.length > 1) {
         this._tournamentRound = this._tournamentRound + 1;
         if (this._tournamentCards.length === 2) {
@@ -307,7 +309,7 @@
     addCardToGroup(args) { const g = Math.max(0, Math.min(3, Scratch.Cast.toNumber(args.GROUP) - 1)); this._groups[g].push(Scratch.Cast.toString(args.CARD)); }
     simulateGroupStage() { this._groupStageActive = false; }
     givePrizeMoney(args) { this._prizeMoney = Scratch.Cast.toNumber(args.AMOUNT); }
-    increaseStreak(args) { 
+    increaseStreak(args) {
       const amount = Scratch.Cast.toNumber(args.AMOUNT);
       this._goalStreak = this._goalStreak + amount;
       if (this._goalStreak > this._longestStreak) this._longestStreak = this._goalStreak;
